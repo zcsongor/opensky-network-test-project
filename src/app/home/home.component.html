@@ -1,0 +1,18 @@
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Modal</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    This is a modal.
+  </div>
+</ng-template>
+
+<div class="airport-grid">
+  <a class="airport-card" *ngFor="let airport of airports" (click)="openModal(template)">
+    <div class="airport-card-image" [ngStyle]="{'background-image': 'url('+ airport.background + ')'}"></div>
+    <p class="airport-card-title">{{airport.city}}</p>
+  </a>
+</div>
