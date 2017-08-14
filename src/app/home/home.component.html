@@ -1,17 +1,65 @@
 <ng-template #template>
   <div class="modal-header">
-    <h4 class="modal-title pull-left">Modal</h4>
+    <h2 class="modal-title pull-left">Flights
+      <div class="btn-group">
+        <label class="btn btn-primary" [(ngModel)]="minutes" btnRadio="0" (click)="getAirportInformation(selectedAirport, 0)">now</label>
+        <label class="btn btn-primary" [(ngModel)]="minutes" btnRadio="10" (click)="getAirportInformation(selectedAirport, 10)">10</label>
+        <label class="btn btn-primary" [(ngModel)]="minutes" btnRadio="30" (click)="getAirportInformation(selectedAirport, 30)">30</label>
+        <label class="btn btn-primary" [(ngModel)]="minutes" btnRadio="45" (click)="getAirportInformation(selectedAirport, 45)">45</label>
+      </div>
+      <span *ngIf="minutes > 0">minutes ago</span>
+    </h2>
     <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
   <div class="modal-body">
-    This is a modal.
+    <section id="departing">
+      <h4>Departing flights:</h4>
+      <div *ngIf="departingFlights.length">
+        <div class="card m-2" *ngFor="let flight of departingFlights">
+          <ul class="card-block airport-list">
+            <li>ICAO code: {{flight.icao24}}</li>
+            <li>Origin: {{flight.origin_country}}</li>
+            <li>Coordinate: {{flight.lat}}, {{flight.lng}}</li>
+            <li>Altitude: {{flight.altitude}}m</li>
+            <li>Last updated: {{flight.time_position*1000 | date:"yyyy/MM/dd HH:mm:ss"}}</li>
+          </ul>
+        </div>
+      </div>
+      <div *ngIf="loading">
+        Loading...
+      </div>
+      <div *ngIf="!loading && !departingFlights.length">
+        No results.
+      </div>
+    </section>
+    <hr/>
+    <section id="arriving">
+      <h4>Arriving flights:</h4>
+      <div *ngIf="arrivingFlights.length">
+        <div class="card m-2" *ngFor="let flight of arrivingFlights">
+          <ul class="card-block airport-list">
+            <li>ICAO code: {{flight.icao24}}</li>
+            <li>Origin: {{flight.origin_country}}</li>
+            <li>Coordinate: {{flight.lat}}, {{flight.lng}}</li>
+            <li>Altitude: {{flight.altitude}}m</li>
+            <li>Last updated: {{flight.time_position*1000 | date:"yyyy/MM/dd HH:mm:ss"}}</li>
+          </ul>
+        </div>
+      </div>
+      <div *ngIf="loading">
+        Loading...
+      </div>
+      <div *ngIf="!loading && !arrivingFlights.length">
+        No results.
+      </div>
+    </section>
   </div>
 </ng-template>
 
 <div class="airport-grid">
-  <a class="airport-card" *ngFor="let airport of airports" (click)="openModal(template)">
+  <a class="airport-card" *ngFor="let airport of airports" (click)="openModal(template, airport)">
     <div class="airport-card-image" [ngStyle]="{'background-image': 'url('+ airport.background + ')'}"></div>
     <p class="airport-card-title">{{airport.city}}</p>
   </a>

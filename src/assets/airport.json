@@ -1,0 +1,82 @@
+[
+    {
+        "city": "London",
+        "background": "https://cdn.londonandpartners.com/assets/73295-640x360-london-skyline-ns.jpg",
+        "location": {
+            "lat": 51.470020,
+            "lng": -0.454295
+        }
+    },
+    {
+        "city": "Atlanta",
+        "background": "https://www.cornerstone-group.com/wp-content/uploads/2013/06/USA-Atlanta.jpg",
+        "location": {
+            "lat": 33.640411,
+            "lng": -84.419853
+        }
+    },
+    {
+        "city": "New York",
+        "background": "https://www.jetblue.com/img/vacations/destination/NewYorkSkyline_960x420.jpg",
+        "location": {
+            "lat": 40.776927,
+            "lng": -73.873966
+        }
+    },
+    {
+        "city": "Amsterdam",
+        "background": "https://www.motel-one.com/fileadmin/_processed_/csm_Amsterdam_Stadtseite_Header_6f2b8b06fd.jpg",
+        "location": {
+            "lat": 52.310539,
+            "lng": 4.768274
+        }
+    },
+    {
+        "city": "Beijing",
+        "background": "https://wearesocial-net.s3.amazonaws.com/wp-content/uploads/2017/06/Beijing-city.jpg",
+        "location": {
+            "lat": 40.079857,
+            "lng": 116.603112
+        }
+    },
+    {
+        "city": "Dubai",
+        "background": "https://cache-graphicslib.viator.com/graphicslib/thumbs674x446/8285/SITours/dubai-top-five-attractions-tour-including-dinner-in-dubai-186773.jpg",
+        "location": {
+            "lat": 25.253175,
+            "lng": 55.365673
+        }
+    },
+    {
+        "city": "Los Angeles",
+        "background": "https://media-cdn.tripadvisor.com/media/photo-s/05/a4/f1/84/los-angeles.jpg",
+        "location": {
+            "lat": 33.941589,
+            "lng": -118.408530
+        }
+    },
+    {
+        "city": "Tokyo",
+        "background": "https://fortunedotcom.files.wordpress.com/2017/04/gettyimages-460020702.jpg?w=720&quality=85",
+        "location": {
+            "lat": 35.549393,
+            "lng": 139.779839
+        }
+    },
+    {
+        "city": "Hong Kong",
+        "background": "http://cache-graphicslib.viator.com/graphicslib/thumbs674x446/3675/SITours/hong-kong-island-half-day-tour-in-hong-kong-114439.jpg",
+        "location": {
+            "lat": 22.308047,
+            "lng": 113.918481
+        }
+    },
+    {
+        "city": "Paris",
+        "background": "https://cache-graphicslib.viator.com/graphicslib/thumbs674x446/2050/SITours/paris-in-one-day-sightseeing-tour-in-paris-130592.jpg",
+        "location": {
+            "lat": 49.009691,
+            "lng": 2.547925
+        }
+    }
+]
